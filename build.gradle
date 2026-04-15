@@ -11,10 +11,9 @@ dependencies {
     // Production dependencies
     implementation 'com.google.guava:guava:31.1-jre'
     
-    // Test dependencies - Complete configuration for Gradle 9.5
-    testImplementation 'junit:junit:4.13.2'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.10.0'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
+    // JUnit 5 dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 }
 
 application {
@@ -23,8 +22,6 @@ application {
 
 test {
     useJUnitPlatform()
-    
-    // Ensure the test runner works
     testLogging {
         events "passed", "skipped", "failed"
     }
