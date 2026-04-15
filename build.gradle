@@ -24,11 +24,13 @@ dependencies {
     
     // Use JUnit test framework - Updated for Gradle 9.5 compatibility
     testImplementation 'junit:junit:4.13.2'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.10.0'  // Required for JUnit 4
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.10.0'
 }
 
-// Define the main class for the application
-mainClassName = 'App'
+// Define the main class for the application - FIXED SYNTAX
+application {
+    mainClass = 'App'
+}
 
 task hello {
     doLast {
@@ -46,5 +48,5 @@ task addition {
 
 // Configure test task
 test {
-    useJUnitPlatform()  // Required for Gradle 9.5
+    useJUnitPlatform()
 }
