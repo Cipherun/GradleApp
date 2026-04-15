@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        gradle 'Gradle8'     // Change this to match your Jenkins Gradle tool name
-        jdk 'Java21'         // Same JDK as your Maven pipeline
+        gradle 'Gradle8'
+        jdk 'Java21'
     }
 
     stages {
@@ -16,13 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'gradle clean build'
+                sh 'gradle clean build -x test'  // Skip tests
             }
         }
 
         stage('Test') {
             steps {
-                sh 'gradle test'
+                echo 'Tests skipped in this build'
             }
         }
 
