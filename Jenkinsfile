@@ -10,7 +10,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Cipherun/MyGradleApp.git'
+                git branch: 'main', url: 'https://github.com/Cipherun/GradleApp.git'
             }
         }
 
